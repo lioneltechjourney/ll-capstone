@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import joblib
 
 st.title('Predicting Machine Failure')
 
 st.write('Hello world!')
 
 # Load the pre-trained models
-rf_model_L = pickle.load(open('/Users/lionellow/Documents/IOD/Data Science Materials/Capstone Project/Lionel/rf_model_L.sav', 'wb'))
-rf_model_M = pickle.load(open('/Users/lionellow/Documents/IOD/Data Science Materials/Capstone Project/Lionel/rf_model_M.sav', 'wb'))
-rf_model_H = pickle.load(open('/Users/lionellow/Documents/IOD/Data Science Materials/Capstone Project/Lionel/rf_model_H.sav', 'wb'))
+rf_model_L = joblib.load('rf_model_L.pkl')
+rf_model_M = joblib.load('rf_model_M.pkl')
+rf_model_H = joblib.load('rf_model_H.pkl')
 
 # Function to make predictions based on the model and input data
 def predict_failure(model, input_data):
