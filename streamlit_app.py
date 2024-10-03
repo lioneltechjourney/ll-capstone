@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestClassifier
 # Load your dataset
 @st.cache  # Cache the function to avoid re-running on every interaction
 def load_data():
-    filepath = 'path_to_your_dataset.csv'
+    filepath = './machine failure.csv'
     df = pd.read_csv(filepath)
     df = df.rename(columns={
         'Air temperature [K]': 'Air_temperature',
